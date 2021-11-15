@@ -13,18 +13,12 @@ module.exports = function (data) {
   const normalAnalysisId = normalSampleAnalysis.analysisId;
   const tumourAnalysisId = tumourSampleAnalysis.analysisId;
 
-  let isTumourBeenThroughSangerWxsRun = false;
-  for (const run of tumourSampleAnalysis.completedSangerRuns) {
-    if (run.producedAnalyses.length > 0) {
-      isTumourBeenThroughSangerWxsRun = true;
-      break;
+  for (const run of tumourSampleAnalysis.completedRuns) {
+    if (run.publishedAnalyses.length > 0) {
+      return reject(
+        `Tumour analysis ${tumourAnalysisId} has already had a sanger-wxs run with its normal analysis ${normalAnalysisId}!`
+      );
     }
-  }
-
-  if (isTumourBeenThroughSangerWxsRun) {
-    return reject(
-      `Tumour analysis ${tumourAnalysisId} has already had a mutect run with its normal analysis ${normalAnalysisId}!`
-    );
   }
 
   return {

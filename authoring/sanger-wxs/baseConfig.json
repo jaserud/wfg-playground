@@ -6,10 +6,6 @@
     {
       "exchange": "align-node-complete",
       "queue": "sanger-wxs-in"
-    },
-    {
-      "exchange": "test-sanger-wxs-in",
-      "queue": "test-sanger-wxs-in"
     }
   ],
   "running": {

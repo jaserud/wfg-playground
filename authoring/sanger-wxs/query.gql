@@ -7,13 +7,16 @@ query DATA($analysisId: String!) {
     tumourSampleAnalysis {
       studyId
       analysisId
-      completedSangerRuns: inputForRuns(
+      completedRuns: inputForRuns(
         filter: {
           state: "COMPLETE"
           repository: "https://github.com/icgc-argo-workflows/sanger-wxs-variant-calling.git"
         }
       ) {
         runId
+        publishedAnalyses: producedAnalyses(filter: { analysisState: PUBLISHED }) {
+          analysisId
+        }
       }
     }
   }

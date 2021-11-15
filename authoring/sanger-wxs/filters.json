@@ -1,10 +1,10 @@
 [
   {
     "expression": "data.analysisType === 'sequencing_alignment' && data.experimentalStrategy === 'WXS'",
-    "reject": false
+    "reject": true
   },
   {
     "expression": "data.samples.length === 1 && data.samples[0].tumourNormalDesignation === 'Tumour'",
-    "reject": false
+    "reject": true
   }
 ]
