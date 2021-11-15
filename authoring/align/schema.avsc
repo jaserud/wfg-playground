@@ -1,0 +1,68 @@
+{
+  "type": "record",
+  "name": "AlignParamsTest",
+  "namespace": "org.icgc_argo.workflow_graph_lib.schema",
+  "fields": [
+    {
+      "name": "analysis_id",
+      "type": "string"
+    },
+    {
+      "name": "study_id",
+      "type": "string"
+    },
+    {
+      "name": "score_url",
+      "type": "string"
+    },
+    {
+      "name": "song_url",
+      "type": "string"
+    },
+    {
+      "name": "ref_genome_fa",
+      "type": "string"
+    },
+    {
+      "name": "download",
+      "type": {
+        "type": "record",
+        "name": "downloadRecord",
+        "fields": [
+          {
+            "name": "song_cpus",
+            "type": "int"
+          },
+          {
+            "name": "song_mem",
+            "type": "int"
+          },
+          {
+            "name": "score_cpus",
+            "type": "int"
+          },
+          {
+            "name": "score_mem",
+            "type": "int"
+          },
+          {
+            "name": "score_url",
+            "type": "string"
+          },
+          {
+            "name": "song_url",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "cpu",
+      "type": "int"
+    },
+    {
+      "name": "mem",
+      "type": "int"
+    }
+  ]
+}

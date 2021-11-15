@@ -1,0 +1,47 @@
+{
+  "type": "record",
+  "name": "OpenAccessParamsTest",
+  "namespace": "org.icgc_argo.workflow_graph_lib.schema",
+  "fields": [
+    {
+      "name": "study_id",
+      "type": "string"
+    },
+    {
+      "name": "analysis_id",
+      "type": "string"
+    },
+    {
+      "name": "song_url",
+      "type": "string"
+    },
+    {
+      "name": "score_url",
+      "type": "string"
+    },
+    {
+      "name": "regions_file",
+      "type": "string"
+    },
+    {
+      "name": "cpus",
+      "type": "int"
+    },
+    {
+      "name": "mem",
+      "type": "int"
+    },
+    {
+      "name": "cleanup",
+      "type": "boolean"
+    },
+    {
+      "name": "max_retries",
+      "type": "int"
+    },
+    {
+      "name": "first_retry_wait_time",
+      "type": "int"
+    }
+  ]
+}

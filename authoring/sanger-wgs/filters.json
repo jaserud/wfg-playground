@@ -1,0 +1,10 @@
+[
+  {
+    "expression": "data.analysisType === 'sequencing_alignment' && data.experimentalStrategy === 'WGS'",
+    "reject": false
+  },
+  {
+    "expression": "data.samples.length === 1 && data.samples[0].tumourNormalDesignation === 'Tumour'",
+    "reject": false
+  }
+]

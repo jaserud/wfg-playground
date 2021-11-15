@@ -1,0 +1,18 @@
+query DATA($analysisId: String!) {
+  analyses(filter: { analysisId: $analysisId }) {
+    content {
+      analysisId
+      analysisState
+      studyId
+      completedRuns: inputForRuns(
+        filter: { state: "COMPLETE", repository: "open access variant filtering" }
+      ) {
+        runId
+        publishedAnalyses: producedAnalyses(filter: { analysisState: PUBLISHED }) {
+          analysisId
+          analysisType
+        }
+      }
+    }
+  }
+}

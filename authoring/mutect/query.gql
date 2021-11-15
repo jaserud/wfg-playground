@@ -1,0 +1,23 @@
+query DATA($analysisId: String!) {
+  sampleMatchedAnalysisPairs(analysisId: $analysisId) {
+    normalSampleAnalysis {
+      studyId
+      analysisId
+    }
+    tumourSampleAnalysis {
+      studyId
+      analysisId
+      completedMutect2Runs: inputForRuns(
+        filter: {
+          state: "COMPLETE"
+          repository: "icgc-argo-workflows/gatk-mutect2-variant-calling"
+        }
+      ) {
+        runId
+        publishedAnalyses: producedAnalyses(filter: { analysisState: PUBLISHED }) {
+          analysisId
+        }
+      }
+    }
+  }
+}

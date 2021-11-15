@@ -1,0 +1,39 @@
+{
+  "pipelineId": "test-pipeline",
+  "nodeId": "open-access-node",
+  "functionLanguage": "js",
+  "input": [
+    {
+      "exchange": "sanger-wgs-node-complete",
+      "queue": "open-access-in"
+    },
+    {
+      "exchange": "sanger-wxs-node-complete",
+      "queue": "open-access-in"
+    },
+    {
+      "exchange": "mutect2-node-complete",
+      "queue": "open-access-in"
+    }
+  ],
+  "running": {
+    "exchange": "open-access-node-running",
+    "queue": "open-access-node-running"
+  },
+  "complete": {
+    "exchange": "open-access-node-complete",
+    "queue": "open-access-node-complete"
+  },
+  "workflow": {
+    "url": "https://github.com/icgc-argo-workflows/open-access-variant-filtering",
+    "revision": "0.4.0",
+    "schemaName": "OpenAccessParamsTest",
+    "schemaNamespace": "org.icgc_argo.workflow_graph_lib.schema",
+    "schemaVersion": "1"
+  },
+  "workflowEngineParams": {
+    "workDir": "<SCHEDULED_DIR>/wfgn-work",
+    "launchDir": "<SCHEDULED_DIR>/wfgn-launch",
+    "projectDir": "<SCHEDULED_DIR>/wfgn-project"
+  }
+}

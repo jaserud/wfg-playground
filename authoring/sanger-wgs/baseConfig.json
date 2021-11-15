@@ -1,0 +1,35 @@
+{
+  "pipelineId": "test-pipeline",
+  "nodeId": "sanger-wgs-node",
+  "functionLanguage": "js",
+  "input": [
+    {
+      "exchange": "align-node-complete",
+      "queue": "sanger-wgs-in"
+    },
+    {
+      "exchange": "test-sanger-wgs-in",
+      "queue": "test-sanger-wgs-in"
+    }
+  ],
+  "running": {
+    "exchange": "sanger-wgs-node-running",
+    "queue": "sanger-wgs-node-running"
+  },
+  "complete": {
+    "exchange": "sanger-wgs-node-complete",
+    "queue": "sanger-wgs-node-complete"
+  },
+  "workflow": {
+    "url": "https://github.com/icgc-argo-workflows/sanger-wgs-variant-calling.git",
+    "revision": "2.1.0-9.6.0",
+    "schemaName": "SangerWgsParamsTest",
+    "schemaNamespace": "org.icgc_argo.workflow_graph_lib.schema",
+    "schemaVersion": "2"
+  },
+  "workflowEngineParams": {
+    "workDir": "<SCHEDULED_DIR>/wfgn-work",
+    "launchDir": "<SCHEDULED_DIR>/wfgn-launch",
+    "projectDir": "<SCHEDULED_DIR>/wfgn-project"
+  }
+}

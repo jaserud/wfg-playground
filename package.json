@@ -1,0 +1,16 @@
+{
+  "name": "wfg-playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "compile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "node compile.js",
+    "printschema": "node printschema.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^8.1.5"
+  }
+}

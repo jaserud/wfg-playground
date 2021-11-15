@@ -1,0 +1,35 @@
+{
+  "pipelineId": "test-pipeline",
+  "nodeId": "align-node",
+  "functionLanguage": "js",
+  "input": [
+    {
+      "exchange": "start",
+      "queue": "start-default"
+    },
+    {
+      "exchange": "queued-align-node",
+      "queue": "align-node"
+    }
+  ],
+  "running": {
+    "exchange": "align-node-running",
+    "queue": "align-node-running"
+  },
+  "complete": {
+    "exchange": "align-node-complete",
+    "queue": "align-node-complete"
+  },
+  "workflow": {
+    "url": "https://github.com/icgc-argo-workflows/dna-seq-processing-wfs.git",
+    "revision": "1.9.0",
+    "schemaName": "AlignParamsTest",
+    "schemaNamespace": "org.icgc_argo.workflow_graph_lib.schema",
+    "schemaVersion": "1"
+  },
+  "workflowEngineParams": {
+    "workDir": "<SCHEDULED_DIR>/wfgn-work",
+    "launchDir": "<SCHEDULED_DIR>/wfgn-launch",
+    "projectDir": "<SCHEDULED_DIR>/wfgn-project"
+  }
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "expression": "data.analysisType === 'variant_calling'",
+    "reject": true
+  },
+  {
+    "expression": "data.files.length === 2",
+    "reject": true
+  },
+  {
+    "expression": "data.files[0].dataType  === 'Raw InDel Calls' || data.files[1].dataType === 'Raw InDel Calls' || data.files[0].dataType  === 'Raw SNV Calls' || data.files[1].dataType === 'Raw SNV Calls'",
+    "reject": true
+  },
+  {
+    "expression": "data.files[0].dataType === 'VCF Index' || data.files[1].dataType === 'VCF Index'",
+    "reject": true
+  }
+]

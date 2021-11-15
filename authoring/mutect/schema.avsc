@@ -1,0 +1,118 @@
+{
+  "type": "record",
+  "name": "Mutect2ParamsTest",
+  "namespace": "org.icgc_argo.workflow_graph_lib.schema",
+  "fields": [
+    {
+      "name": "study_id",
+      "type": "string"
+    },
+    {
+      "name": "normal_aln_analysis_id",
+      "type": "string"
+    },
+    {
+      "name": "tumour_aln_analysis_id",
+      "type": "string"
+    },
+    {
+      "name": "song_url",
+      "type": "string"
+    },
+    {
+      "name": "score_url",
+      "type": "string"
+    },
+    {
+      "name": "cpus",
+      "type": "int"
+    },
+    {
+      "name": "mem",
+      "type": "int"
+    },
+    {
+      "name": "download",
+      "type": {
+        "type": "record",
+        "name": "SongScoreConfigRecord",
+        "fields": [
+          {
+            "name": "song_cpus",
+            "type": "int"
+          },
+          {
+            "name": "song_mem",
+            "type": "int"
+          },
+          {
+            "name": "score_cpus",
+            "type": "int"
+          },
+          {
+            "name": "score_mem",
+            "type": "int"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ref_fa",
+      "type": "string"
+    },
+    {
+      "name": "mutect2_scatter_interval_files",
+      "type": "string"
+    },
+    {
+      "name": "bqsr_apply_grouping_file",
+      "type": "string"
+    },
+    {
+      "name": "bqsr_recal_grouping_file",
+      "type": "string"
+    },
+    {
+      "name": "germline_resource_vcfs",
+      "type": "string"
+    },
+    {
+      "name": "contamination_variants",
+      "type": "string"
+    },
+    {
+      "name": "panel_of_normals",
+      "type": "string"
+    },
+    {
+      "name": "calculateContamination",
+
+      "type": {
+        "type": "record",
+        "name": "CalculateContaminationRecord",
+        "fields": [
+          {
+            "name": "mem",
+            "type": "int"
+          }
+        ]
+      }
+    },
+    {
+      "name": "perform_bqsr",
+      "type": "boolean"
+    },
+    {
+      "name": "cleanup",
+      "type": "boolean"
+    },
+    {
+      "name": "max_retries",
+      "type": "int"
+    },
+    {
+      "name": "first_retry_wait_time",
+      "type": "int"
+    }
+  ]
+}

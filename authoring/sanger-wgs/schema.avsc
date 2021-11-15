@@ -1,0 +1,179 @@
+{
+  "type": "record",
+  "name": "SangerWgsParamsTest",
+  "namespace": "org.icgc_argo.workflow_graph_lib.schema",
+  "fields": [
+    {
+      "name": "study_id",
+      "type": "string"
+    },
+    {
+      "name": "normal_aln_analysis_id",
+      "type": "string"
+    },
+    {
+      "name": "tumour_aln_analysis_id",
+      "type": "string"
+    },
+    {
+      "name": "song_url",
+      "type": "string"
+    },
+    {
+      "name": "score_url",
+      "type": "string"
+    },
+    {
+      "name": "cpus",
+      "type": "int"
+    },
+    {
+      "name": "mem",
+      "type": "int"
+    },
+    {
+      "name": "download",
+      "type": {
+        "type": "record",
+        "name": "SongScoreConfigRecord",
+        "fields": [
+          {
+            "name": "song_cpus",
+            "type": "int"
+          },
+          {
+            "name": "song_mem",
+            "type": "int"
+          },
+          {
+            "name": "score_cpus",
+            "type": "int"
+          },
+          {
+            "name": "score_mem",
+            "type": "int"
+          }
+        ]
+      }
+    },
+    {
+      "name": "sangerWgsVariantCaller",
+      "type": {
+        "type": "record",
+        "name": "SangerWgsVariantCallerRecord",
+        "fields": [
+          {
+            "name": "cpus",
+            "type": "int"
+          },
+          {
+            "name": "mem",
+            "type": "int"
+          },
+          {
+            "name": "pindelcpu",
+            "type": "int"
+          },
+          {
+            "name": "exclude",
+            "type": "string"
+          },
+          {
+            "name": "ref_genome_tar",
+            "type": "string"
+          },
+          {
+            "name": "vagrent_annot",
+            "type": "string"
+          },
+          {
+            "name": "ref_snv_indel_tar",
+            "type": "string"
+          },
+          {
+            "name": "ref_cnv_sv_tar",
+            "type": "string"
+          },
+          {
+            "name": "qcset_tar",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "generateBas",
+      "type": {
+        "type": "record",
+        "name": "GenerateBasRecord",
+        "fields": [
+          {
+            "name": "cpus",
+            "type": "int"
+          },
+          {
+            "name": "mem",
+            "type": "int"
+          },
+          {
+            "name": "ref_genome_fa",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "repackSangerResults",
+      "type": {
+        "type": "record",
+        "name": "CpuMemRecord",
+        "fields": [
+          {
+            "name": "cpus",
+            "type": "int"
+          },
+          {
+            "name": "mem",
+            "type": "int"
+          }
+        ]
+      }
+    },
+    {
+      "name": "prepSangerSupplement",
+      "type": "org.icgc_argo.workflow_graph_lib.schema.CpuMemRecord"
+    },
+    {
+      "name": "cavemanVcfFix",
+      "type": "org.icgc_argo.workflow_graph_lib.schema.CpuMemRecord"
+    },
+    {
+      "name": "extractSangerCall",
+      "type": "org.icgc_argo.workflow_graph_lib.schema.CpuMemRecord"
+    },
+    {
+      "name": "payloadGenVariantCall",
+      "type": "org.icgc_argo.workflow_graph_lib.schema.CpuMemRecord"
+    },
+    {
+      "name": "prepSangerQc",
+      "type": "org.icgc_argo.workflow_graph_lib.schema.CpuMemRecord"
+    },
+    {
+      "name": "upload",
+      "type": "org.icgc_argo.workflow_graph_lib.schema.SongScoreConfigRecord"
+    },
+    {
+      "name": "cleanup",
+      "type": "boolean"
+    },
+    {
+      "name": "max_retries",
+      "type": "int"
+    },
+    {
+      "name": "first_retry_wait_time",
+      "type": "int"
+    }
+  ]
+}

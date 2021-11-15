@@ -1,0 +1,35 @@
+{
+  "pipelineId": "test-pipeline",
+  "nodeId": "mutect2-node",
+  "functionLanguage": "js",
+  "input": [
+    {
+      "exchange": "align-node-complete",
+      "queue": "mutect2-in"
+    },
+    {
+      "exchange": "test-mutect2-in",
+      "queue": "test-mutect2-in"
+    }
+  ],
+  "running": {
+    "exchange": "mutect2-node-running",
+    "queue": "mutect2-node-running"
+  },
+  "complete": {
+    "exchange": "mutect2-node-complete",
+    "queue": "mutect2-node-complete"
+  },
+  "workflow": {
+    "url": "https://github.com/icgc-argo-workflows/gatk-mutect2-variant-calling.git",
+    "revision": "4.1.8.0-6.0",
+    "schemaName": "Mutect2ParamsTest",
+    "schemaNamespace": "org.icgc_argo.workflow_graph_lib.schema",
+    "schemaVersion": "1"
+  },
+  "workflowEngineParams": {
+    "workDir": "<SCHEDULED_DIR>/wfgn-work",
+    "launchDir": "<SCHEDULED_DIR>/wfgn-launch",
+    "projectDir": "<SCHEDULED_DIR>/wfgn-project"
+  }
+}

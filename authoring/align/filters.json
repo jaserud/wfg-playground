@@ -1,0 +1,6 @@
+[
+  {
+    "expression": "data.analysisType === 'sequencing_experiment'",
+    "reject": true
+  }
+]

@@ -1,0 +1,23 @@
+query DATA($analysisId: String!) {
+  sampleMatchedAnalysisPairs(analysisId: $analysisId) {
+    normalSampleAnalysis {
+      studyId
+      analysisId
+    }
+    tumourSampleAnalysis {
+      studyId
+      analysisId
+      completedSangerRuns: inputForRuns(
+        filter: {
+          state: "COMPLETE"
+          repository: "https://github.com/icgc-argo-workflows/sanger-wgs-variant-calling.git"
+        }
+      ) {
+        runId
+        publishedAnalyses: producedAnalyses(filter: { analysisState: PUBLISHED }) {
+          analysisId
+        }
+      }
+    }
+  }
+}
