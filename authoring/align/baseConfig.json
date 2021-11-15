@@ -6,10 +6,6 @@
     {
       "exchange": "start",
       "queue": "start-default"
-    },
-    {
-      "exchange": "queued-align-node",
-      "queue": "align-node"
     }
   ],
   "running": {

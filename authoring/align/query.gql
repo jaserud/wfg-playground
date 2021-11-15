@@ -4,16 +4,11 @@ query DATA($analysisId: String!) {
       analysisId
       analysisState
       studyId
-      completedAlignRuns: inputForRuns(
-        filter: {
-          state: "COMPLETE"
-          repository: "https://github.com/icgc-argo-workflows/dna-seq-processing-wfs"
-        }
+      completedRuns: inputForRuns(
+        filter: { state: "COMPLETE", repository: "dna-seq-processing-wfs" }
       ) {
         runId
-        publishedAlignAnalyses: producedAnalyses(
-          filter: { analysisState: PUBLISHED, analysisType: "sequencing_alignment" }
-        ) {
+        publishedAnalyses: producedAnalyses(filter: { analysisState: PUBLISHED }) {
           analysisId
           analysisType
         }

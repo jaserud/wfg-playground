@@ -20,6 +20,14 @@
       "type": "string"
     },
     {
+      "name": "cpus",
+      "type": "int"
+    },
+    {
+      "name": "mem",
+      "type": "int"
+    },
+    {
       "name": "ref_genome_fa",
       "type": "string"
     },
@@ -57,11 +65,93 @@
       }
     },
     {
-      "name": "cpu",
+      "name": "seqDataToLaneBam",
+      "type": {
+        "type": "record",
+        "name": "CpuMemRecord",
+        "fields": [
+          {
+            "name": "cpus",
+            "type": "int"
+          },
+          {
+            "name": "mem",
+            "type": "int"
+          }
+        ]
+      }
+    },
+    {
+      "name": "bwaMemAligner",
+      "type": "org.icgc_argo.workflow_graph_lib.schema.CpuMemRecord"
+    },
+    {
+      "name": "bamMergeSortMarkdup",
+      "type": "org.icgc_argo.workflow_graph_lib.schema.CpuMemRecord"
+    },
+    {
+      "name": "payloadGenDnaAlignment",
+      "type": "org.icgc_argo.workflow_graph_lib.schema.CpuMemRecord"
+    },
+    {
+      "name": "readGroupUBamQC",
+      "type": "org.icgc_argo.workflow_graph_lib.schema.CpuMemRecord"
+    },
+    {
+      "name": "alignedSeqQC",
+      "type": "org.icgc_argo.workflow_graph_lib.schema.CpuMemRecord"
+    },
+    {
+      "name": "gatkCollectOxogMetrics",
+      "type": "org.icgc_argo.workflow_graph_lib.schema.CpuMemRecord"
+    },
+    {
+      "name": "payloadGenDnaSeqQc",
+      "type": "org.icgc_argo.workflow_graph_lib.schema.CpuMemRecord"
+    },
+    {
+      "name": "uploadAlignment",
+      "type": {
+        "type": "record",
+        "name": "SongScoreRecord",
+        "fields": [
+          {
+            "name": "song_cpus",
+            "type": "int"
+          },
+          {
+            "name": "song_mem",
+            "type": "int"
+          },
+          {
+            "name": "score_cpus",
+            "type": "int"
+          },
+          {
+            "name": "score_mem",
+            "type": "int"
+          }
+        ]
+      }
+    },
+    {
+      "name": "uploadQc",
+      "type": "org.icgc_argo.workflow_graph_lib.schema.CpuMemRecord"
+    },
+    {
+      "name": "tempdir",
+      "type": "boolean"
+    },
+    {
+      "name": "cleanup",
+      "type": "boolean"
+    },
+    {
+      "name": "max_retries",
       "type": "int"
     },
     {
-      "name": "mem",
+      "name": "first_retry_wait_time",
       "type": "int"
     }
   ]
