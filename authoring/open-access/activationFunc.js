@@ -1,21 +1,15 @@
 module.exports = function (data) {
   const currAnalysis = data.data.analyses.content[0];
   if (!currAnalysis) {
-    reject(`Analysis is empty!`);
+    return reject(`Analysis is not found!`);
   }
 
-  let shouldRunWf = true;
   for (const run of currAnalysis.completedRuns) {
     if (run.publishedAnalyses.length > 0) {
-      shouldRunWf = false;
-      break;
+      return reject(
+        `Analysis with ID ${currAnalysis.analysisId} has already had a completed open access run!`
+      );
     }
-  }
-
-  if (!shouldRunWf) {
-    reject(
-      `Analysis with ID ${currAnalysis.analysisId} has already had a completed open access run!`
-    );
   }
 
   return {

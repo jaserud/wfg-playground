@@ -8,10 +8,7 @@ query DATA($analysisId: String!) {
       studyId
       analysisId
       completedRuns: inputForRuns(
-        filter: {
-          state: "COMPLETE"
-          repository: "https://github.com/icgc-argo-workflows/sanger-wxs-variant-calling.git"
-        }
+        filter: { state: "COMPLETE", repository: "icgc-argo-workflows/sanger-wxs-variant-calling" }
       ) {
         runId
         publishedAnalyses: producedAnalyses(filter: { analysisState: PUBLISHED }) {

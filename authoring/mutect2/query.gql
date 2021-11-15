@@ -7,7 +7,7 @@ query DATA($analysisId: String!) {
     tumourSampleAnalysis {
       studyId
       analysisId
-      completedMutect2Runs: inputForRuns(
+      completedRuns: inputForRuns(
         filter: {
           state: "COMPLETE"
           repository: "icgc-argo-workflows/gatk-mutect2-variant-calling"

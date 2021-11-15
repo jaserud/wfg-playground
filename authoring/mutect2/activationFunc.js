@@ -13,18 +13,12 @@ module.exports = function (data) {
   const normalAnalysisId = normalSampleAnalysis.analysisId;
   const tumourAnalysisId = tumourSampleAnalysis.analysisId;
 
-  let isTumourBeenThroughMutect2Run = false;
-  for (const run of tumourSampleAnalysis.completedMutect2Runs) {
+  for (const run of tumourSampleAnalysis.completedRuns) {
     if (run.publishedAnalyses.length > 0) {
-      isTumourBeenThroughMutect2Run = true;
-      break;
+      return reject(
+        `Tumour analysis ${tumourAnalysisId} has already had a mutect2 run with its normal analysis ${normalAnalysisId}!`
+      );
     }
-  }
-
-  if (isTumourBeenThroughMutect2Run) {
-    return reject(
-      `Tumour analysis ${tumourAnalysisId} has already had a mutect2 run with its normal analysis ${normalAnalysisId}!`
-    );
   }
 
   return {

@@ -6,10 +6,6 @@
     {
       "exchange": "align-node-complete",
       "queue": "mutect2-in"
-    },
-    {
-      "exchange": "test-mutect2-in",
-      "queue": "test-mutect2-in"
     }
   ],
   "running": {

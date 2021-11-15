@@ -1,6 +1,6 @@
 [
   {
-    "expression": "data.analysisType === 'sequencing_alignment' && data.experimentalStrategy === 'WGS'",
+    "expression": "data.analysisType === 'sequencing_alignment'",
     "reject": true
   },
   {

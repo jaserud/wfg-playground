@@ -6,10 +6,6 @@
     {
       "exchange": "align-node-complete",
       "queue": "sanger-wgs-in"
-    },
-    {
-      "exchange": "test-sanger-wgs-in",
-      "queue": "test-sanger-wgs-in"
     }
   ],
   "running": {
@@ -21,7 +17,7 @@
     "queue": "sanger-wgs-node-complete"
   },
   "workflow": {
-    "url": "https://github.com/icgc-argo-workflows/sanger-wgs-variant-calling.git",
+    "url": "https://github.com/icgc-argo-workflows/sanger-wgs-variant-calling",
     "revision": "2.1.0-9.6.0",
     "schemaName": "SangerWgsParamsTest",
     "schemaNamespace": "org.icgc_argo.workflow_graph_lib.schema",

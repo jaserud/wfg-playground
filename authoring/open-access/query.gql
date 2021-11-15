@@ -5,7 +5,10 @@ query DATA($analysisId: String!) {
       analysisState
       studyId
       completedRuns: inputForRuns(
-        filter: { state: "COMPLETE", repository: "open access variant filtering" }
+        filter: {
+          state: "COMPLETE"
+          repository: "icgc-argo-workflows/open-access-variant-filtering"
+        }
       ) {
         runId
         publishedAnalyses: producedAnalyses(filter: { analysisState: PUBLISHED }) {
