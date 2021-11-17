@@ -17,7 +17,7 @@
     "queue": "mutect2-node-complete"
   },
   "workflow": {
-    "url": "https://github.com/icgc-argo-workflows/gatk-mutect2-variant-calling.git",
+    "url": "https://github.com/icgc-argo-workflows/gatk-mutect2-variant-calling",
     "revision": "4.1.8.0-6.0",
     "schemaName": "Mutect2ParamsTest",
     "schemaNamespace": "org.icgc_argo.workflow_graph_lib.schema",

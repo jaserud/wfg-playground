@@ -17,11 +17,11 @@
     "queue": "align-node-complete"
   },
   "workflow": {
-    "url": "https://github.com/icgc-argo-workflows/dna-seq-processing-wfs.git",
+    "url": "https://github.com/icgc-argo-workflows/dna-seq-processing-wfs",
     "revision": "1.9.0",
     "schemaName": "AlignParamsTest",
     "schemaNamespace": "org.icgc_argo.workflow_graph_lib.schema",
-    "schemaVersion": "1"
+    "schemaVersion": "2"
   },
   "workflowEngineParams": {
     "workDir": "<SCHEDULED_DIR>/wfgn-work",
