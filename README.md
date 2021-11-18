@@ -1,6 +1,6 @@
 ### What is this?
 
-An authoring playground to write and manage the various components of a Workflow Graph Node (WFGN)
+An authoring playground to write and manage the various components of several Workflow Graph Node (WFGN)
 
 ### How does it work?
 
