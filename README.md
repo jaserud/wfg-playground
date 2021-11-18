@@ -14,4 +14,12 @@ Each WFGN consists of these files:
 - query.gql
 - schema.avsc
 
-After all the files are ready use `npm run compile` to select and generate a json config for desired WFGN that combines the files into a config ready for a WFGN instance to consume.
+These files comibe create a config json that can be given to a WFGN instance.
+
+### Scripts
+
+`npm ci` => run first to install dependecies
+
+`npm run compile` => Used to select and generate a combined json config ready for a WFGN instance to consume. File are found in `./output-configs/*-config.json` where "\*" is the name of the WFGN folder
+
+`npm run printschema` => used to print a avro schema which is ready to post to [Workflow-graph-registry](https://github.com/icgc-argo/workflow-graph-registry/issues/new?assignees=&labels=bug&template=bug_report.md&title=%F0%9F%90%9B+)
