@@ -2,5 +2,9 @@
   {
     "expression": "data.analysisType === 'sequencing_experiment'",
     "reject": true
+  },
+  {
+    "expression": "data.experimentalStrategy === 'WXS' || data.experimentalStrategy === 'WGS'",
+    "reject": true
   }
 ]
