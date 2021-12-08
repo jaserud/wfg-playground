@@ -21,7 +21,7 @@
     "revision": "2.1.0-9.6.0",
     "schemaName": "SangerWgsParamsTest",
     "schemaNamespace": "org.icgc_argo.workflow_graph_lib.schema",
-    "schemaVersion": "2"
+    "schemaVersion": "1"
   },
   "workflowEngineParams": {
     "workDir": "<SCHEDULED_DIR>/wfgn-work",
